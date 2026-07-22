@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Makes the website work well on phones and tablets -->
+  <!-- Makes the website responsive on phones and tablets -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Eric Wu | Portfolio</title>
 
   <style>
-    /* =========================================
-       BASIC PAGE STYLES
-       ========================================= */
+    /* ========================================
+       BASIC PAGE SETTINGS
+       ======================================== */
 
     * {
       margin: 0;
@@ -30,9 +30,9 @@
       line-height: 1.6;
     }
 
-    /* =========================================
-       NAVIGATION
-       ========================================= */
+    /* ========================================
+       NAVIGATION BAR
+       ======================================== */
 
     nav {
       background-color: #111827;
@@ -41,6 +41,9 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav h2 {
@@ -48,49 +51,50 @@
     }
 
     nav ul {
-      display: flex;
-      gap: 20px;
       list-style: none;
+      display: flex;
+      gap: 22px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
 
     nav a:hover {
       color: #60a5fa;
     }
 
-    /* =========================================
+    /* ========================================
        HERO SECTION
-       ========================================= */
+       ======================================== */
 
     .hero {
-      min-height: 70vh;
+      min-height: 75vh;
       padding: 80px 8%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: linear-gradient(135deg, #111827, #1d4ed8);
+      background: linear-gradient(135deg, #111827, #2563eb);
       color: white;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
+      font-size: 3.2rem;
+      margin-bottom: 12px;
     }
 
     .hero h2 {
       font-size: 1.5rem;
-      margin-bottom: 20px;
       font-weight: normal;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 650px;
-      margin-bottom: 30px;
+      max-width: 700px;
       font-size: 1.1rem;
+      margin-bottom: 28px;
     }
 
     .main-button {
@@ -108,9 +112,9 @@
       background-color: #dbeafe;
     }
 
-    /* =========================================
-       GENERAL SECTIONS
-       ========================================= */
+    /* ========================================
+       GENERAL SECTION SETTINGS
+       ======================================== */
 
     section {
       padding: 70px 8%;
@@ -118,26 +122,26 @@
 
     .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 35px;
     }
 
-    /* =========================================
+    /* ========================================
        ABOUT SECTION
-       ========================================= */
+       ======================================== */
 
     .about-content {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
       text-align: center;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
     }
 
-    /* =========================================
+    /* ========================================
        PROJECT SECTION
-       ========================================= */
+       ======================================== */
 
-    .projects {
+    .projects-section {
       background-color: white;
     }
 
@@ -146,7 +150,7 @@
       margin: 0 auto;
       display: grid;
 
-      /* Automatically changes the number of columns */
+      /* Automatically adjusts the number of columns */
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
       gap: 25px;
@@ -160,16 +164,22 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
     .project-card h3 {
+      font-size: 1.4rem;
       margin-bottom: 12px;
-      font-size: 1.35rem;
     }
 
     .project-card p {
@@ -178,24 +188,26 @@
 
     .technology {
       color: #2563eb;
+      font-size: 0.92rem;
       font-weight: bold;
-      font-size: 0.9rem;
     }
 
     .project-buttons {
-      margin-top: auto;
-      padding-top: 15px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: auto;
+      padding-top: 15px;
     }
 
     .project-buttons a {
-      padding: 10px 15px;
+      display: inline-block;
+      padding: 10px 16px;
       background-color: #2563eb;
       color: white;
       text-decoration: none;
       border-radius: 7px;
+      font-weight: bold;
     }
 
     .project-buttons a:hover {
@@ -210,12 +222,12 @@
       background-color: #111827;
     }
 
-    /* =========================================
+    /* ========================================
        SKILLS SECTION
-       ========================================= */
+       ======================================== */
 
-    .skill-list {
-      max-width: 800px;
+    .skills-list {
+      max-width: 850px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -227,22 +239,23 @@
       background-color: #dbeafe;
       color: #1e40af;
       padding: 10px 18px;
-      border-radius: 20px;
+      border-radius: 22px;
       font-weight: bold;
     }
 
-    /* =========================================
+    /* ========================================
        CONTACT SECTION
-       ========================================= */
+       ======================================== */
 
-    .contact {
+    .contact-section {
       background-color: #111827;
       color: white;
       text-align: center;
     }
 
-    .contact p {
-      margin-bottom: 25px;
+    .contact-section p {
+      max-width: 650px;
+      margin: 0 auto 25px;
     }
 
     .contact-links {
@@ -254,10 +267,11 @@
 
     .contact-links a {
       color: white;
+      text-decoration: none;
       border: 1px solid white;
       padding: 10px 18px;
       border-radius: 7px;
-      text-decoration: none;
+      font-weight: bold;
     }
 
     .contact-links a:hover {
@@ -265,9 +279,9 @@
       color: #111827;
     }
 
-    /* =========================================
+    /* ========================================
        FOOTER
-       ========================================= */
+       ======================================== */
 
     footer {
       background-color: #030712;
@@ -276,22 +290,38 @@
       padding: 18px;
     }
 
-    /* =========================================
+    /* ========================================
        MOBILE DESIGN
-       ========================================= */
+       ======================================== */
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       nav {
         flex-direction: column;
         gap: 12px;
       }
 
-      .hero h1 {
-        font-size: 2.3rem;
+      nav ul {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .hero {
-        min-height: 60vh;
+        min-height: 65vh;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 55px 6%;
       }
     }
   </style>
@@ -299,7 +329,10 @@
 
 <body>
 
-  <!-- Navigation menu -->
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+
   <nav>
     <h2>Eric Wu</h2>
 
@@ -311,11 +344,14 @@
     </ul>
   </nav>
 
-  <!-- Main introduction -->
+  <!-- ========================================
+       HERO / INTRODUCTION
+       ======================================== -->
+
   <header class="hero">
     <h1>Hi, I'm Eric Wu</h1>
 
-    <h2>Computer Science Student and Aspiring Software Developer</h2>
+    <h2>Computer Science Student and Software Developer</h2>
 
     <p>
       I am a Computer Science student at Boston University interested
@@ -328,35 +364,42 @@
     </a>
   </header>
 
-  <!-- About me -->
+  <!-- ========================================
+       ABOUT ME
+       ======================================== -->
+
   <section id="about">
     <h2 class="section-title">About Me</h2>
 
     <div class="about-content">
       <p>
-        I enjoy building software, games, and interactive experiences.
-        My projects have allowed me to practice JavaScript, APIs,
-        artificial intelligence, debugging, responsive design, and
-        user interface development. I am continuing to build my
-        technical portfolio while preparing for software engineering
-        and game development opportunities.
+        I enjoy building software, games, and interactive web applications.
+        Through my projects, I have gained experience working with JavaScript,
+        APIs, game logic, artificial intelligence, responsive design, and
+        debugging. I am continuing to improve my skills while preparing for
+        software engineering and game development opportunities.
       </p>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
+  <!-- ========================================
+       PROJECTS
+       ======================================== -->
+
+  <section id="projects" class="projects-section">
     <h2 class="section-title">My Projects</h2>
 
     <div class="project-grid">
 
-      <!-- Project 1 -->
+      <!-- Project 1: L'Oréal Chatbot -->
       <article class="project-card">
+        <div class="project-icon">💄</div>
+
         <h3>L'Oréal Product Chatbot</h3>
 
         <p>
-          An AI-powered chatbot that helps users explore L'Oréal
-          products and receive personalized beauty recommendations.
+          An AI-powered chatbot that helps users explore L'Oréal products
+          and receive product recommendations based on their preferences.
         </p>
 
         <p class="technology">
@@ -364,6 +407,8 @@
         </p>
 
         <div class="project-buttons">
+
+          <!-- Link to the working website -->
           <a
             href="https://mcla1121.github.io/08-prj-loreal-chatbot/"
             target="_blank"
@@ -372,6 +417,7 @@
             Live Project
           </a>
 
+          <!-- Link to the GitHub source code -->
           <a
             class="code-button"
             href="https://github.com/mcla1121/08-prj-loreal-chatbot"
@@ -383,14 +429,16 @@
         </div>
       </article>
 
-      <!-- Project 2 -->
+      <!-- Project 2: Charity Water Game -->
       <article class="project-card">
+        <div class="project-icon">💧</div>
+
         <h3>Charity: Water Game</h3>
 
         <p>
-          An interactive memory-matching game connected to
-          charity: water's mission, featuring difficulty options,
-          scoring, a timer, and responsive visual feedback.
+          An interactive memory-matching game inspired by charity: water's
+          mission. The game includes scoring, a timer, difficulty modes,
+          and responsive game feedback.
         </p>
 
         <p class="technology">
@@ -398,6 +446,8 @@
         </p>
 
         <div class="project-buttons">
+
+          <!-- Link to the working website -->
           <a
             href="https://mcla1121.github.io/06-final-cw-game-water-quest-/"
             target="_blank"
@@ -406,6 +456,7 @@
             Live Project
           </a>
 
+          <!-- Link to the GitHub source code -->
           <a
             class="code-button"
             href="https://github.com/mcla1121/06-final-cw-game-water-quest-"
@@ -417,14 +468,16 @@
         </div>
       </article>
 
-      <!-- Project 3 -->
+      <!-- Project 3: NASA Space Explorer -->
       <article class="project-card">
+        <div class="project-icon">🚀</div>
+
         <h3>NASA Space Explorer</h3>
 
         <p>
-          A web application that connects to NASA's Astronomy
-          Picture of the Day API and displays space images,
-          descriptions, and astronomy information.
+          A web application that connects to NASA's Astronomy Picture
+          of the Day API and displays space images, descriptions,
+          and astronomy information.
         </p>
 
         <p class="technology">
@@ -432,6 +485,8 @@
         </p>
 
         <div class="project-buttons">
+
+          <!-- Link to the working website -->
           <a
             href="https://mcla1121.github.io/07-nasa-space-explorer/"
             target="_blank"
@@ -440,6 +495,7 @@
             Live Project
           </a>
 
+          <!-- Link to the GitHub source code -->
           <a
             class="code-button"
             href="https://github.com/mcla1121/07-nasa-space-explorer"
@@ -454,11 +510,14 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- ========================================
+       SKILLS
+       ======================================== -->
+
   <section id="skills">
     <h2 class="section-title">Skills</h2>
 
-    <div class="skill-list">
+    <div class="skills-list">
       <span class="skill">Java</span>
       <span class="skill">Python</span>
       <span class="skill">C</span>
@@ -471,16 +530,21 @@
     </div>
   </section>
 
-  <!-- Contact information -->
-  <section id="contact" class="contact">
+  <!-- ========================================
+       CONTACT
+       ======================================== -->
+
+  <section id="contact" class="contact-section">
     <h2 class="section-title">Contact Me</h2>
 
     <p>
-      I am interested in software engineering and game development
-      opportunities.
+      I am interested in software engineering, web development,
+      and game development opportunities.
     </p>
 
     <div class="contact-links">
+
+      <!-- Your GitHub profile -->
       <a
         href="https://github.com/mcla1121"
         target="_blank"
@@ -489,7 +553,7 @@
         GitHub
       </a>
 
-      <!-- Replace this with your real LinkedIn link -->
+      <!-- Replace this with your real LinkedIn URL -->
       <a
         href="YOUR_LINKEDIN_LINK"
         target="_blank"
@@ -498,12 +562,16 @@
         LinkedIn
       </a>
 
-      <!-- Replace this with your real email -->
+      <!-- Replace this with your real email address -->
       <a href="mailto:YOUR_EMAIL@example.com">
         Email Me
       </a>
     </div>
   </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
 
   <footer>
     <p>© 2026 Eric Wu. Built with HTML and CSS.</p>
