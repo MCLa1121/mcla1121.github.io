@@ -99,14 +99,6 @@ I am continuing to improve my skills in:
 
 ---
 
-## GitHub Statistics
-
-![Eric's GitHub Stats](https://github-readme-stats.vercel.app/api?username=mcla1121&show_icons=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mcla1121&layout=compact)
-
----
-
 ## Contact
 
 - [GitHub](https://github.com/mcla1121)
